@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohammed ALMesbah | Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', 'Cairo', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Background Gradient Animation */
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Particles.js Container */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .profile {
+      flex: 1 1 300px;
+      text-align: center;
+      padding: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+      animation: scaleUp 1.5s ease-in-out;
+    }
+
+    .profile h1 {
+      margin: 1rem 0 0.5rem;
+      font-size: 2.5rem;
+      animation: slideInFromLeft 1.5s ease-out;
+    }
+
+    .profile p {
+      font-size: 1.2rem;
+      color: #ccc;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .info {
+      flex: 1 1 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      backdrop-filter: blur(8px);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.5rem;
+      animation: slideInFromRight 1.5s ease-out;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .social {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .social a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      color: #00c6ff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes slideInFromLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInFromRight {
+      0% { transform: translateX(50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .info {
+        align-items: center;
+      }
+
+      .section {
+        width: 100%;
+      }
+    }
+
+    .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #00c6ff;
+  box-shadow: 0 0 8px rgba(0,198,255,0.5);
+}
+
+.contact-form button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,198,255,0.3);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Particles.js Background -->
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <!-- Profile Section -->
+    <div class="profile">
+      <img src="imga/image.png" alt="Profile Picture">
+      <h1>Mohammed ALMesbah</h1>
+      <p>Front-end Dev | مطور واجهات ويب 
+
+
+</p>
+      <div class="social">
+        <a href="#"><span>🌐</span></a>
+        <a href="#"><span>📧</span></a>
+        <a href="#"><span>💼</span></a>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info">
+      <div class="section">
+        <h2>About Me | عني</h2>
+        <p>Front-end Developer with a strong CS background and solid Communication Skills
+          Focused on building efficient and user-friendly interfaces.
+.</p>
+<br><br>
+
+
+        <p>مطور واجهة أمامية يتمتع بخلفية قوية في علوم الكمبيوتر ومهارات اتصال
+           قوية ويركز على بناء واجهات فعالة وسهلة الاستخدام.</p>
+
+      </div>
+      
+      <div class="section">
+        <h2>Skills | المهارات</h2>
+        <ul>
+          <li>Front-end Developer</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Node.js, Python</li>
+          <li>Strong foundation in Computer Science</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="padding: 0; overflow: hidden;">
+  <div style="
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(255,255,255,0.1);
+  ">
+    <h2 style="margin-bottom: 1rem;">Contact Me | تواصل معي</h2>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLScYVzRPmax1zTh-KvNosNn2vYagslEmodOiyKMeXJx2sDJ2PA/viewform?embedded=true" 
+      width="100%" 
+      height="650" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0"
+      style="border-radius: 10px;"
+    >
+      Loading…
+    </iframe>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Particles.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5
+        },
+        "size": {
+          "value": 3
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+</body>
+</html>
